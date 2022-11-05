@@ -223,7 +223,7 @@
         </div>
         <div class="row">
           <div class="col-6">
-            <a href="#" class="btn btn-light btn-rounded rounded-pill">View
+            <a class="btn btn-light btn-rounded rounded-pill" data-bs-toggle="modal" data-bs-target="#modal_img" id="" onclick="show_portfolio('School_manage',7)">View
               <span><i class="fas fa-home"></i></span>
             </a>
           </div>
@@ -246,12 +246,12 @@
         </div>
         <div class="row">
           <div class="col-6">
-            <a target="_blank" href="https://github.com/anass2002-dr/Amendis" class="btn btn-light btn-rounded rounded-pill">View
+            <a class="btn btn-light btn-rounded rounded-pill" data-bs-toggle="modal" data-bs-target="#modal_img" id="view">View
               <span><i class="fas fa-home"></i></span>
             </a>
           </div>
           <div class="col-6">
-            <a target="_blank" rel="noopener noreferrer" href="https://github.com/anass2002-dr/Amendis" class="btn btn-light btn-rounded rounded-pill">Github
+            <a target="_blank" href="https://github.com/anass2002-dr/Amendis" class="btn btn-light btn-rounded rounded-pill">Github
               <span><i class="bi bi-github"></i></span>
             </a>
           </div>
@@ -288,6 +288,33 @@
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,96L48,128C96,160,192,224,288,213.3C384,203,480,117,576,117.3C672,117,768,203,864,202.7C960,203,1056,117,1152,117.3C1248,117,1344,203,1392,245.3L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
 </section>
 
+<div class="modal fade" id="modal_img" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+        <div class="carousel-indicators" id="carousel_button">
+          <!-- <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button> -->
+
+        </div>
+        <div class="carousel-inner" id="carousel_inner">
+          
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- /////////////////////////////////////////////////////////////////////////////////////////////////
                        START SECTION 6 - THE FAQ 
 //////////////////////////////////////////////////////////////////////////////////////////////////////-->
@@ -495,50 +522,6 @@
     </div>
   </div>
 
-  <!-- START THE CONTENT FOR THE CAMPANY INFO -->
-  <!-- <div class="container mt-5">
-    <div class="row text-white justify-content-center mt-3 pb-3">
-      <div class="col-12 col-sm-6 col-lg-6 mx-auto">
-        <h5 class="text-capitalize fw-bold">Campany name</h5>
-        <hr class="bg-white d-inline-block mb-4" style="width: 60px; height: 2px;">
-        <p class="lh-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ex obcaecati blanditiis reprehenderit ab mollitia voluptatem consectetur?
-        </p>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-2 mb-4 mx-auto">
-        <h5 class="text-capitalize fw-bold">Products</h5>
-        <hr class="bg-white d-inline-block mb-4" style="width: 60px; height: 2px;">
-        <ul class="list-inline campany-list">
-          <li><a href="#">Lorem ipsum</a></li>
-          <li><a href="#">Lorem ipsum</a></li>
-          <li><a href="#">Lorem ipsum</a></li>
-          <li><a href="#">Lorem ipsum</a></li>
-        </ul>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-2 mb-4 mx-auto">
-        <h5 class="text-capitalize fw-bold">useful links</h5>
-        <hr class="bg-white d-inline-block mb-4" style="width: 60px; height: 2px;">
-        <ul class="list-inline campany-list">
-          <li><a href="#"> Your Account</a></li>
-          <li><a href="#">Become an Affiliate</a></li>
-          <li><a href="#">create an account</a></li>
-          <li><a href="#">Help</a></li>
-        </ul>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-2 mb-4 mx-auto">
-        <h5 class="text-capitalize fw-bold">contact</h5>
-        <hr class="bg-white d-inline-block mb-4" style="width: 60px; height: 2px;">
-        <ul class="list-inline campany-list">
-          <li><a href="#">Lorem ipsum</a></li>
-          <li><a href="#">Lorem ipsum</a></li>
-          <li><a href="#">Lorem ipsum</a></li>
-          <li><a href="#">Lorem ipsum</a></li>
-        </ul>
-      </div>
-    </div>
-  </div> -->
-
-  <!-- START THE COPYRIGHT INFO  -->
   <div class="footer-bottom pt-5 pb-5">
     <div class="container">
       <div class="row text-center text-white">
@@ -556,23 +539,59 @@
 <a href="#" class="shadow btn-primary rounded-circle back-to-top">
   <i class="fas fa-chevron-up"></i>
 </a>
-
-
-
-   
     <script src="assets/vendors/js/glightbox.min.js"></script>
-
-    <script type="text/javascript">
-      const lightbox = GLightbox({
-        'touchNavigation': true,
-        'href': 'https://www.youtube.com/watch?v=J9lS14nM1xg',
-        'type': 'video',
-        'source': 'youtube', //vimeo, youtube or local
-        'width': 900,
-        'autoPlayVideos': 'true',
-});
+    <!-- JavaScript Bundle with Popper -->
+    <script>
+      var btn=document.getElementById('school_manage');
     
-    </script>
+      // btn.addEventListener('click',show_portfolio('School_manage',7))
+      function show_portfolio(name_projet,number_file){
+        var carousel_inner=document.getElementById('carousel_inner');
+        var btn_carsouel=document.getElementById("carousel_button");
+        for(var i=1;i<=number_file;i++){
+          var newBtn=document.createElement('button');
+          newBtn.setAttribute("type","button");
+          newBtn.setAttribute("data-bs-target","#carouselExampleCaptions");
+          newBtn.setAttribute("data-bs-slide-to",""+i-1+"");
+          newBtn.setAttribute("aria-label","slide "+i);
+          var newDiv=document.createElement('div');
+          newDiv.classList.add('carousel-item');
+          if(i==1){
+            newBtn.classList.add('active');
+            newBtn.setAttribute("aria-current","true");
+            newDiv.classList.add('active');
+          }
+          btn_carsouel.appendChild(newBtn);
+
+          var img=document.createElement('img');
+          img.src="images/portfolio/"+name_projet+"/"+"portfolio-"+i+".jpg";
+          img.classList.add('d-block');
+          img.classList.add('w-100');
+
+          newDiv.appendChild(img);
+          var div2=document.createElement('div');
+          div2.classList.add('carousel-caption');
+          div2.classList.add('d-none');
+          div2.classList.add('d-md-block');
+
+          // var h5=document.createElement('h5');
+          // h5.classList.add("text-dark");
+          // h5.innerHTML="First slide label";
+
+          // var p=document.createElement('p');
+          // p.classList.add("text-secondary");
+          // p.innerHTML="Some representative placeholder content for the first slide.";
+          // div2.appendChild(h5);
+          // div2.appendChild(p);
+          newDiv.appendChild(div2);
+          carousel_inner.appendChild(newDiv);
+        }
+
+      }
+  </script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
      <script src="assets/js/bootstrap.bundle.min.js"></script>
+     <script src="assets/vendors/glightbox/js/glightbox.js"></script>
+     <script src="assets/vendors/glightbox/js/glightbox.min.js"></script>
 </body>
 </html>
