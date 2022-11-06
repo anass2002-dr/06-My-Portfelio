@@ -246,7 +246,7 @@
         </div>
         <div class="row">
           <div class="col-6">
-            <a class="btn btn-light btn-rounded rounded-pill" data-bs-toggle="modal" data-bs-target="#modal_img">View
+            <a class="btn btn-light btn-rounded rounded-pill" data-bs-toggle="modal" data-bs-target="#modal_img" onclick="show_portfolio('Amendis',16)">View
               <span><i class="fas fa-home"></i></span>
             </a>
           </div>
@@ -293,12 +293,7 @@
     <div class="modal-content">
       <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
         <div class="carousel-indicators" id="carousel_button">
-          <!-- <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button> -->
-
+          
         </div>
         <div class="carousel-inner" id="carousel_inner">
           
@@ -548,9 +543,15 @@
       function show_portfolio(name_projet,number_file){
         var carousel_inner=document.getElementById('carousel_inner');
         var btn_carsouel=document.getElementById("carousel_button");
+        var get_btn=btn_carsouel.getElementsByTagName('button');
+        if(get_btn.length>0){
+          for(var j=get_btn.length-1;j>=0;j--){
+            get_btn[j].remove();
+          }
+        }
         var div_exist=document.getElementsByClassName('carousel-item');
         if(div_exist.length>0){
-          for(var y=0;y<div_exist.length;y++){
+          for(var y=div_exist.length-1;y>=0;y--){
             div_exist[y].remove();
           }
         }
@@ -572,10 +573,8 @@
 
           var img=document.createElement('img');
           img.src="images/portfolio/"+name_projet+"/"+"portfolio-"+i+".jpg";
-          // img.style.height='500px';
           img.classList.add('d-block');
           img.classList.add('w-100');
-
           newDiv.appendChild(img);
           var div2=document.createElement('div');
           div2.classList.add('carousel-caption');
