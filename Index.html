@@ -202,16 +202,16 @@
     <!-- FILTER BUTTONS  -->
     <div class="row mt-5 mb-4 g-3 text-center">
       <div class="col-md-12">
-        <button class="btn btn-outline-light" type="button">All</button>
-        <button class="btn btn-outline-light" type="button">websites</button>
-        <button class="btn btn-outline-light" type="button">Mobile App</button>
-        <button class="btn btn-outline-light" type="button">Desktop App</button>
+        <button class="btn btn-outline-light" type="button" id="all" onclick="d_portfolio('all')">All</button>
+        <button class="btn btn-outline-light" type="button" id="web" onclick="d_portfolio('web')">websites</button>
+        <button class="btn btn-outline-light" type="button" id="mobile" onclick="d_portfolio('mobile')">Mobile App</button>
+        <button class="btn btn-outline-light" type="button" id="desktop" onclick="d_portfolio('desktop')">Desktop App</button>
       </div>
     </div>
 
     <!-- START THE PORTFOLIO ITEMS  -->
     <div class="row">
-      <div class="col-lg-4 col-md-6 p-3">
+      <div class="col-lg-4 col-md-6 p-3 collapse show web">
         <div class="portfolio-box shadow">
           <img src="images/portfolio/portfolio-1.jpg" alt="portfolio 1 image" title="portfolio 1 picture" class="img-fluid">
           <div class="portfolio-info">
@@ -234,7 +234,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 p-3">
+      <div class="col-lg-4 col-md-6 p-3 collapse show mobile">
         <div class="portfolio-box shadow">
           <img src="images/portfolio/light.jpg" alt="portfolio 2 image" title="portfolio 2 picture" class="img-fluid">
           <div class="portfolio-info">
@@ -258,7 +258,7 @@
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6 p-3">
+      <div class="col-lg-4 col-md-6 p-3 collapse show desktop">
         <div class="portfolio-box shadow">
           <img src="images/portfolio/hair_management.jpg" alt="portfolio 3 image" title="portfolio 3 picture" class="img-fluid">
           <div class="portfolio-info">
@@ -270,7 +270,7 @@
         </div>
         <div class="row">
           <div class="col-6">
-            <a href="#" class="btn btn-light btn-rounded rounded-pill">View
+            <a class="btn btn-light btn-rounded rounded-pill" data-bs-toggle="modal" data-bs-target="#modal_img" onclick="show_portfolio('hair_manage',6)">View
               <span><i class="fas fa-home"></i></span>
             </a>
           </div>
@@ -537,6 +537,58 @@
     <script src="assets/vendors/js/glightbox.min.js"></script>
     <!-- JavaScript Bundle with Popper -->
     <script>
+      var btn_d_we=document.getElementById('web');
+      var btn_d_mobile=document.getElementById('mobile');
+      var btn_d_desktop=document.getElementById('desktop');
+      function d_portfolio(choix){
+        var cls_web=document.getElementsByClassName('web');
+        var cls_mobile=document.getElementsByClassName('mobile');
+        var cls_desktop=document.getElementsByClassName('desktop');
+        if(choix=="web"){
+          for(var i=0;i<cls_web.length;i++){
+            cls_web[i].classList.add('show')
+          }
+          for(var i=0;i<cls_mobile.length;i++){
+            cls_mobile[i].classList.remove('show')
+          }
+          for(var j=0;j<cls_desktop.length;j++){
+            cls_desktop[j].classList.remove('show');
+          }
+        }
+        else if(choix=="mobile"){
+          for(var i=0;i<cls_mobile.length;i++){
+            cls_mobile[i].classList.add('show')
+          }
+          for(var i=0;i<cls_web.length;i++){
+            cls_web[i].classList.remove('show')
+          }
+          for(var j=0;j<cls_desktop.length;j++){
+            cls_desktop[j].classList.remove('show');
+          }
+        }
+        else if(choix=="desktop"){
+          for(var i=0;i<cls_desktop.length;i++){
+            cls_desktop[i].classList.add('show')
+          }
+          for(var i=0;i<cls_mobile.length;i++){
+            cls_mobile[i].classList.remove('show')
+          }
+          for(var j=0;j<cls_web.length;j++){
+            cls_web[j].classList.remove('show');
+          }
+        }
+        else if(choix=="all"){
+          for(var i=0;i<cls_desktop.length;i++){
+            cls_desktop[i].classList.add('show')
+          }
+          for(var i=0;i<cls_mobile.length;i++){
+            cls_mobile[i].classList.add('show')
+          }
+          for(var j=0;j<cls_web.length;j++){
+            cls_web[j].classList.add('show');
+          }
+        }
+      }
       var btn=document.getElementById('school_manage');
       var click=false;
       // btn.addEventListener('click',show_portfolio('School_manage',7))
