@@ -246,7 +246,7 @@
         </div>
         <div class="row">
           <div class="col-6">
-            <a class="btn btn-light btn-rounded rounded-pill" data-bs-toggle="modal" data-bs-target="#modal_img" id="view">View
+            <a class="btn btn-light btn-rounded rounded-pill" data-bs-toggle="modal" data-bs-target="#modal_img">View
               <span><i class="fas fa-home"></i></span>
             </a>
           </div>
@@ -543,11 +543,18 @@
     <!-- JavaScript Bundle with Popper -->
     <script>
       var btn=document.getElementById('school_manage');
-    
+      var click=false;
       // btn.addEventListener('click',show_portfolio('School_manage',7))
       function show_portfolio(name_projet,number_file){
         var carousel_inner=document.getElementById('carousel_inner');
         var btn_carsouel=document.getElementById("carousel_button");
+        var div_exist=document.getElementsByClassName('carousel-item');
+        if(div_exist.length>0){
+          for(var y=0;y<div_exist.length;y++){
+            div_exist[y].remove();
+          }
+        }
+        
         for(var i=1;i<=number_file;i++){
           var newBtn=document.createElement('button');
           newBtn.setAttribute("type","button");
@@ -565,6 +572,7 @@
 
           var img=document.createElement('img');
           img.src="images/portfolio/"+name_projet+"/"+"portfolio-"+i+".jpg";
+          // img.style.height='500px';
           img.classList.add('d-block');
           img.classList.add('w-100');
 
@@ -574,15 +582,6 @@
           div2.classList.add('d-none');
           div2.classList.add('d-md-block');
 
-          // var h5=document.createElement('h5');
-          // h5.classList.add("text-dark");
-          // h5.innerHTML="First slide label";
-
-          // var p=document.createElement('p');
-          // p.classList.add("text-secondary");
-          // p.innerHTML="Some representative placeholder content for the first slide.";
-          // div2.appendChild(h5);
-          // div2.appendChild(p);
           newDiv.appendChild(div2);
           carousel_inner.appendChild(newDiv);
         }
