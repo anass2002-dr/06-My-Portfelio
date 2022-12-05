@@ -223,7 +223,7 @@
         </div>
         <div class="row">
           <div class="col-6">
-            <a class="btn btn-light btn-rounded rounded-pill" data-bs-toggle="modal" data-bs-target="#modal_img" id="" onclick="show_portfolio('School_manage',7)">View
+            <a class="btn btn-light btn-rounded rounded-pill" data-bs-toggle="modal" data-bs-target="#modal_img" id="" onclick="show_portfolio('School_manage',7,0)">View
               <span><i class="fas fa-home"></i></span>
             </a>
           </div>
@@ -234,6 +234,31 @@
           </div>
         </div>
       </div>
+
+      <div class="col-lg-4 col-md-6 p-3 collapse show web">
+        <div class="portfolio-box shadow">
+          <img src="images/portfolio/portfolio-10.jpg" alt="Resturant" title="Resturant" class="img-fluid">
+          <div class="portfolio-info">
+            <div class="caption">
+              <h4>Resturant</h4>
+              <p>Web Appliction</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <a class="btn btn-light btn-rounded rounded-pill" data-bs-toggle="modal" data-bs-target="#modal_img" id="" onclick="show_portfolio('resturant',8,1)">View
+              <span><i class="fas fa-home"></i></span>
+            </a>
+          </div>
+          <div class="col-6">
+            <a target="_blank" rel="noopener noreferrer" href="https://github.com/anass2002-dr/Resturant" class="btn btn-light btn-rounded rounded-pill">Github
+              <span><i class="bi bi-github"></i></span>
+            </a>
+          </div>
+        </div>
+      </div>
+
       <div class="col-lg-4 col-md-6 p-3 collapse show mobile">
         <div class="portfolio-box shadow">
           <img src="images/portfolio/light.jpg" alt="portfolio 2 image" title="portfolio 2 picture" class="img-fluid">
@@ -246,7 +271,7 @@
         </div>
         <div class="row">
           <div class="col-6">
-            <a class="btn btn-light btn-rounded rounded-pill" data-bs-toggle="modal" data-bs-target="#modal_img" onclick="show_portfolio('Amendis',16)">View
+            <a class="btn btn-light btn-rounded rounded-pill" data-bs-toggle="modal" data-bs-target="#modal_img" onclick="show_portfolio('Amendis',16,0)">View
               <span><i class="fas fa-home"></i></span>
             </a>
           </div>
@@ -270,7 +295,7 @@
         </div>
         <div class="row">
           <div class="col-6">
-            <a class="btn btn-light btn-rounded rounded-pill" data-bs-toggle="modal" data-bs-target="#modal_img" onclick="show_portfolio('hair_manage',6)">View
+            <a class="btn btn-light btn-rounded rounded-pill" data-bs-toggle="modal" data-bs-target="#modal_img" onclick="show_portfolio('hair_manage',6,0)">View
               <span><i class="fas fa-home"></i></span>
             </a>
           </div>
@@ -592,7 +617,7 @@
       var btn=document.getElementById('school_manage');
       var click=false;
       // btn.addEventListener('click',show_portfolio('School_manage',7))
-      function show_portfolio(name_projet,number_file){
+      function show_portfolio(name_projet,number_file,video){
         var carousel_inner=document.getElementById('carousel_inner');
         var btn_carsouel=document.getElementById("carousel_button");
         var get_btn=btn_carsouel.getElementsByTagName('button');
@@ -622,8 +647,45 @@
             newDiv.classList.add('active');
           }
           btn_carsouel.appendChild(newBtn);
+          if(video=1){
+            if(i==number_file){
+              // Create video element
+              const video = document.createElement('video');
+              video.src ="images/portfolio/"+name_projet+"/"+"portfolio-"+i+".mp4"
+              video.controls = true;
+              video.muted = false;
+              // video.height = 240; // in px
+              // video.width = 320; // in px
+              video.classList.add('d-block');
+              video.classList.add('w-100');
 
-          var img=document.createElement('img');
+              // Include in HTML as child of #box
+              newDiv.appendChild(video);
+              var div2=document.createElement('div');
+              div2.classList.add('carousel-caption');
+              div2.classList.add('d-none');
+              div2.classList.add('d-md-block');
+
+              newDiv.appendChild(div2);
+              carousel_inner.appendChild(newDiv);
+            }
+            else{
+              var img=document.createElement('img');
+              img.src="images/portfolio/"+name_projet+"/"+"portfolio-"+i+".jpg";
+              img.classList.add('d-block');
+              img.classList.add('w-100');
+              newDiv.appendChild(img);
+              var div2=document.createElement('div');
+              div2.classList.add('carousel-caption');
+              div2.classList.add('d-none');
+              div2.classList.add('d-md-block');
+
+              newDiv.appendChild(div2);
+              carousel_inner.appendChild(newDiv);
+            }
+          }
+          else{
+            var img=document.createElement('img');
           img.src="images/portfolio/"+name_projet+"/"+"portfolio-"+i+".jpg";
           img.classList.add('d-block');
           img.classList.add('w-100');
@@ -635,6 +697,8 @@
 
           newDiv.appendChild(div2);
           carousel_inner.appendChild(newDiv);
+          }
+
         }
 
       }
